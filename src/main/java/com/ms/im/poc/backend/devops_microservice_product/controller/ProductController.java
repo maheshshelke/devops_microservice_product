@@ -1,8 +1,6 @@
 package com.ms.im.poc.backend.devops_microservice_product.controller;
 
-
-
-import com.ms.im.poc.backend.devops_product.model.Product;
+import com.ms.im.poc.backend.devops_microservice_product.model.Product;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
