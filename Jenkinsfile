@@ -1,11 +1,9 @@
 pipeline {
-    agent docker {
-        // Image name and tag
-        image 'maven:3.9.11-jdk-21'
-        // Always pull the image to ensure it's the latest version.
-        alwaysPull true
-        // Set up a Docker volume for Maven local repository.
-        args '-v /tmp/.m2/repository:/root/.m2/repository'
+    agent {
+        docker {
+            image 'maven:3.9.11-jdk-21'
+            args '-v $HOME/.m2:/root/.m2'
+        }
     }
 
     tools {
