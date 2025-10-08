@@ -14,7 +14,6 @@ public class ProductController {
             new Product(2L, "Product B", 20.0)
     );
 
-
     @GetMapping
     public List<Product> getAllProducts() {
         return products;
@@ -34,6 +33,5 @@ public class ProductController {
                 .findFirst()
                 .orElseThrow();
     }
-
 }
 
