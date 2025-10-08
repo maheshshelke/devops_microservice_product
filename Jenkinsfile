@@ -2,9 +2,6 @@ pipeline {
     agent any
 
     tools {
-        // Get some code from a GitHub repository
-        git branch: 'develop', url: 'https://github.com/maheshshelke/devops_microservice_product.git'
-
         // Install the Maven version configured as "M3" and add it to the path.
         maven "M3911"
     }
@@ -12,7 +9,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-
+                // Get some code from a GitHub repository
+                git branch: 'develop', url: 'https://github.com/maheshshelke/devops_microservice_product.git'
 
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
